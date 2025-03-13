@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <h1>
-      this is Index page
+  <div class="bg-primary-700">
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
     </h1>
   </div>
 </template>
