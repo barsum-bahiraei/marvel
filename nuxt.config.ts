@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         ],
     },
     image: {
-        provider: 'ipx',
-        domains: ['http://i.annihil.us']
-    },
+        // Remove 'provider: static' or use 'provider: default' for external URLs
+        provider: 'default',  // 'default' allows external URLs to work
+    }
 })
