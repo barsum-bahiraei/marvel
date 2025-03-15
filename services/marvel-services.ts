@@ -1,8 +1,21 @@
 import httpClient from "~/services/http-client";
 
 class MarvelServices {
-    schoolControl() {
-        return httpClient.marvelInstance.get('school-item-creator/school-control')
+    getCharacterList(params) {
+        return httpClient.marvelInstance.get('characters', {
+            params: params,
+        })
+    }
+
+    getCharacterDetail(characterId: number) {
+        return httpClient.marvelInstance.get(`characters/${characterId}`)
+    }
+
+    getCharacterComicsList(characterId: number) {
+        return httpClient.marvelInstance.get(`characters/${characterId}/comics`)
+    }
+    getCharacterSeriesList(characterId: number) {
+        return httpClient.marvelInstance.get(`characters/${characterId}/series`)
     }
 }
 

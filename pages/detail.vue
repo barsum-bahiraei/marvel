@@ -43,4 +43,36 @@
 </template>
 <script setup lang="ts">
 import CharacterFilm from "~/components/character-film.vue";
+import MarvelServices from "~/services/marvel-services";
+import {onMounted} from "vue";
+
+function getCharacterDetail() {
+  MarvelServices
+      .getCharacterDetail(1010888)
+      .then((response) => {
+        console.log(response);
+      })
+}
+
+function getCharacterComicsList() {
+  MarvelServices
+      .getCharacterComicsList(1010888)
+      .then((response) => {
+        console.log(response);
+      })
+}
+
+function getCharacterSeriesList() {
+  MarvelServices
+      .getCharacterSeriesList(1010888)
+      .then((response) => {
+        console.log(response);
+      })
+}
+
+onMounted(() => {
+  getCharacterDetail();
+  getCharacterComicsList();
+  getCharacterSeriesList();
+})
 </script>

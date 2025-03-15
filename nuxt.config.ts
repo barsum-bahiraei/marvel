@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-03-13',
     devtools: {enabled: false},
     modules: [
-        '@nuxt/eslint',
         '@nuxt/image',
         '@nuxt/scripts'
     ],
