@@ -13,7 +13,7 @@ const hash = md5(ts + privateKey + publicKey);
 
 // Create an Axios instance
 const marvelInstance = axios.create({
-    baseURL: 'http://gateway.marvel.com/v1/public/',
+    baseURL: 'https://gateway.marvel.com/v1/public/',
     params: {
         ts,
         apikey: publicKey,
