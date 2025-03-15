@@ -5,7 +5,7 @@ import {isLoading} from "~/composable/use-loading";
 export function useCharacterList() {
     const characterList = ref([]);
     const characterParams = ref({
-        limit: 10,
+        limit: 12,
         offset: 0,
         nameStartsWith: null,
     });
