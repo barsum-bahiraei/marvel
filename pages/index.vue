@@ -10,7 +10,7 @@
             @keyup.enter="getCharacterList()"
         >
         <button
-            class="bg-danger text-white py-2 px-3 rounded ml-3 flex justify-center items-center cursor-pointer"
+            class="bg-danger text-white py-2 px-3 rounded ml-3 flex justify-center items-center"
             @click="getCharacterList()"
         >
           <NuxtImg src="/images/search-normal.svg" alt="search" width="24" height="24" class="mr-1"/>

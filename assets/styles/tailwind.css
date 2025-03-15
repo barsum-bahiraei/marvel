@@ -23,3 +23,7 @@ body {
     @apply text-white;
     @apply text-base;
 }
+
+button, a {
+    @apply cursor-pointer;
+}
