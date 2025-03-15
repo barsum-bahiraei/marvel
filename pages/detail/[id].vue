@@ -70,6 +70,14 @@ import {useCharacterSeriesList} from "~/composable/use-character-series-List";
 import {useCharacterComicsList} from "~/composable/use-character-comics-List";
 import {useRoute} from "#vue-router";
 
+useHead({
+  title: 'Marvel | Character Detail',
+  meta: [
+    {name: 'description', content: 'Browse a Detail of Marvel characters with detailed information.'},
+    {name: 'robots', content: 'index, follow'},
+  ]
+});
+
 const {characterDetail, getCharacterDetail} = useCharacterDetail();
 const {characterSeriesList, getCharacterSeriesList} = useCharacterSeriesList();
 const {characterComicsList, getCharacterComicsList} = useCharacterComicsList();

@@ -46,6 +46,14 @@ import CharacterFilm from "~/components/character-film.vue";
 import {onMounted} from "vue";
 import {useCharacterList} from "~/composable/use-character-list";
 
+useHead({
+  title: 'Marvel | Character List',
+  meta: [
+    {name: 'description', content: 'Browse a list of Marvel characters with detailed information.'},
+    {name: 'robots', content: 'index, follow'},
+  ]
+});
+
 const {characterList, characterParams, getCharacterList} = useCharacterList();
 
 function changeOffset(newOffset: number) {
