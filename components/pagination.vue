@@ -1,7 +1,7 @@
 <template>
   <div class="inline-flex items-center justify-between">
     <button
-        class="mx-1"
+        class="mx-1 cursor-pointer"
         :disabled="currentPage === 1"
         @click="goToPage(1)"
     >
@@ -10,7 +10,7 @@
 
 
     <button
-        class="mx-1"
+        class="mx-1 cursor-pointer"
         :disabled="currentPage === 1"
         @click="goToPage(currentPage - 1)"
     >
@@ -21,7 +21,7 @@
     <div>
       <button
           v-if="startPage > 1"
-          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1 cursor-pointer"
           @click="goToPage(1)"
       >
         1
@@ -33,8 +33,8 @@
           v-for="page in pageNumbers"
           :key="page"
           :class="{ 'bg-danger rounded-full': page === currentPage }"
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1 cursor-pointer"
           @click="goToPage(page)"
-          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
       >
         {{ page }}
       </button>
@@ -42,8 +42,8 @@
       <span v-if="endPage < totalPages - 1" class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1">...</span>
 
       <button
-          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
           v-if="endPage < totalPages"
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1 cursor-pointer"
           @click="goToPage(totalPages)"
       >
         {{ totalPages }}
@@ -52,7 +52,7 @@
 
 
     <button
-        class="mx-1"
+        class="mx-1 cursor-pointer"
         :disabled="currentPage === totalPages"
         @click="goToPage(currentPage + 1)"
     >
@@ -61,7 +61,7 @@
 
 
     <button
-        class="mx-1"
+        class="mx-1 cursor-pointer"
         :disabled="currentPage === totalPages"
         @click="goToPage(totalPages)"
     >
