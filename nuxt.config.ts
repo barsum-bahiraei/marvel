@@ -14,9 +14,9 @@ export default defineNuxtConfig({
             tailwindcss(),
         ],
     },
-    image: {
-        cloudinary: {
-            baseURL: ''
-        }
-    }
+    // image: {
+    //     cloudinary: {
+    //         baseURL: ''
+    //     }
+    // }
 })
