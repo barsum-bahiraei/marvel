@@ -4,7 +4,7 @@ import MarvelServices from "~/services/marvel-services";
 export function useCharacterComicsList() {
     const characterComicsList = ref([]);
 
-    const getCharacterComicsList = async (characterId) => {
+    const getCharacterComicsList = async (characterId: number) => {
         try {
             const response = await MarvelServices.getCharacterComicsList(characterId);
             characterComicsList.value = response.data;
