@@ -13,5 +13,8 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(),
         ],
-    }
+    },
+    image: {
+        provider: 'static', // or use another provider if you prefer
+    },
 })
