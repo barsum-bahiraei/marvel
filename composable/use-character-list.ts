@@ -6,7 +6,7 @@ export function useCharacterList() {
     const characterList = ref([]);
     const characterParams = ref({
         limit: 10,
-        offset: 1,
+        offset: 0,
         nameStartsWith: null,
     });
     const getCharacterList = async () => {
