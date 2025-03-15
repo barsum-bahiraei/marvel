@@ -17,6 +17,7 @@
         <CharacterFilm
             v-for="item in characterList?.data?.results"
             :key="item.id"
+            :id="item.id"
             :name="item.name"
             :thumbnail="item.thumbnail.path"
         />
@@ -34,7 +35,7 @@
 import Pagination from "~/components/pagination.vue";
 import CharacterFilm from "~/components/character-film.vue";
 import {onMounted} from "vue";
-import {useCharacterList} from "~/composable/useCharacterList";
+import {useCharacterList} from "~/composable/use-character-list";
 
 const {characterList, characterParams, getCharacterList} = useCharacterList();
 
