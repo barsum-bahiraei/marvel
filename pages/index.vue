@@ -24,9 +24,5 @@
 <script setup lang="ts">
 import PageNumber from "~/components/page-number.vue";
 
-const count = ref(1)
-
-definePageMeta({
-  layout: 'default', // Or any other layout name
-})
+const count = ref(1);
 </script>
