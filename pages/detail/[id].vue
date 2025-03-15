@@ -4,21 +4,21 @@
       <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12">
         <div class="">
           <img
-              :src="`${characterDetail?.data?.results[0].thumbnail.path}/portrait_xlarge.jpg`"
-              :alt="characterDetail?.data?.results[0].name"
+              :src="`${characterItemDetail?.thumbnail.path}/portrait_xlarge.jpg`"
+              :alt="characterItemDetail?.name"
               class="w-full md:w-[240px] md:h-[240px] rounded-lg md:object-cover"
           />
         </div>
         <div class="text-white">
           <div class="text-[32px] font-medium">
-            {{ characterDetail?.data?.results[0].name }}
+            {{ characterItemDetail?.name }}
           </div>
           <div class="mt-8 text-secondary-4">
-            {{ characterDetail?.data?.results[0].description }}
+            {{ characterItemDetail?.description }}
           </div>
           <div class="mt-5 text-secondary-4">
             <a
-                v-for="url in characterDetail?.data?.results[0].urls"
+                v-for="url in characterItemDetail?.urls"
                 :key="url.type"
                 :href="url.url"
                 target="_blank"
@@ -63,7 +63,7 @@
 </template>
 <script setup lang="ts">
 import CharacterFilm from "~/components/character-film.vue";
-import {onMounted} from "vue";
+import {computed, onMounted} from "vue";
 import {useCharacterDetail} from "~/composable/use-character-detail";
 import {useCharacterSeriesList} from "~/composable/use-character-series-List";
 import {useCharacterComicsList} from "~/composable/use-character-comics-List";
@@ -81,6 +81,8 @@ const {characterDetail, getCharacterDetail} = useCharacterDetail();
 const {characterSeriesList, getCharacterSeriesList} = useCharacterSeriesList();
 const {characterComicsList, getCharacterComicsList} = useCharacterComicsList();
 const route = useRoute();
+
+const characterItemDetail = computed(() => characterDetail.value?.data?.results[0]);
 
 onMounted(() => {
   getCharacterDetail(+route.params.id);
