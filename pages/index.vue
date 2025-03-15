@@ -15,7 +15,7 @@
         </button>
       </div>
     </template>
-    <div class="bg-secondary py-8">
+    <div class="bg-secondary py-8 min-h-[89vh]">
       <div class="container px-3 mx-auto grid md:grid-cols-4 gap-6">
         <CharacterFilm
             v-for="item in characterList?.data?.results"
@@ -25,12 +25,14 @@
             :thumbnail="item.thumbnail.path"
         />
       </div>
-      <Pagination
-          :total="characterList?.data?.total"
-          :offset="characterParams.offset"
-          :limit="characterParams.limit"
-          @change-offset="changeOffset"
-      />
+      <div class="flex justify-center mt-8">
+        <Pagination
+            :total="characterList?.data?.total"
+            :offset="characterParams.offset"
+            :limit="characterParams.limit"
+            @change-offset="changeOffset"
+        />
+      </div>
     </div>
   </NuxtLayout>
 </template>

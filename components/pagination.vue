@@ -1,42 +1,48 @@
 <template>
-  <div>
-
+  <div class="inline-flex items-center justify-between">
     <button
+        class="mx-1"
         :disabled="currentPage === 1"
-        @click="goToPage(1)">
-      First
+        @click="goToPage(1)"
+    >
+      <NuxtImg src="/images/double_arrow_left.svg" with="24" height="24"/>
     </button>
 
 
     <button
+        class="mx-1"
         :disabled="currentPage === 1"
-        @click="goToPage(currentPage - 1)">
-      Previous
+        @click="goToPage(currentPage - 1)"
+    >
+      <NuxtImg src="/images/arrow_left.svg" with="24" height="24"/>
     </button>
 
 
-    <div class="page-numbers">
+    <div>
       <button
           v-if="startPage > 1"
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
           @click="goToPage(1)"
       >
         1
       </button>
 
-      <span v-if="startPage > 2">...</span>
+      <span v-if="startPage > 2" class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1">...</span>
 
       <button
           v-for="page in pageNumbers"
           :key="page"
-          :class="{ active: page === currentPage }"
+          :class="{ 'bg-danger rounded-full': page === currentPage }"
           @click="goToPage(page)"
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
       >
         {{ page }}
       </button>
 
-      <span v-if="endPage < totalPages - 1">...</span>
+      <span v-if="endPage < totalPages - 1" class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1">...</span>
 
       <button
+          class="inline-flex justify-center items-center w-[27px] h-[27px] mx-1"
           v-if="endPage < totalPages"
           @click="goToPage(totalPages)"
       >
@@ -46,22 +52,26 @@
 
 
     <button
+        class="mx-1"
         :disabled="currentPage === totalPages"
-        @click="goToPage(currentPage + 1)">
-      Next
+        @click="goToPage(currentPage + 1)"
+    >
+      <NuxtImg src="/images/arrow_right.svg" with="24" height="24"/>
     </button>
 
 
     <button
+        class="mx-1"
         :disabled="currentPage === totalPages"
-        @click="goToPage(totalPages)">
-      Last
+        @click="goToPage(totalPages)"
+    >
+      <NuxtImg src="/images/double_arrow_right.svg" with="24" height="24"/>
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import {ref, computed} from 'vue';
 
 const props = defineProps<{
   limit: number;

@@ -31,7 +31,7 @@
         </div>
       </div>
     </template>
-    <div class="bg-secondary py-8">
+    <div class="bg-secondary py-8 min-h-[89vh]">
       <div class="container px-3 mx-auto">
         <div class="text-[24px] text-white mb-4">
           Comics
