@@ -5,7 +5,7 @@
         <div class="">
           <img
               :src="`${characterDetail?.data?.results[0].thumbnail.path}/portrait_xlarge.jpg`"
-              alt="this is picture"
+              :alt="characterDetail?.data?.results[0].name"
               class="w-full md:w-[240px] md:h-[240px] rounded-lg md:object-cover"
           />
         </div>
