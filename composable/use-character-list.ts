@@ -1,5 +1,6 @@
-import { ref } from 'vue';
+import {ref} from 'vue';
 import MarvelServices from "~/services/marvel-services";
+import {isLoading} from "~/composable/use-loading";
 
 export function useCharacterList() {
     const characterList = ref([]);
@@ -8,19 +9,21 @@ export function useCharacterList() {
         offset: 1,
         nameStartsWith: null,
     });
-
     const getCharacterList = async () => {
+        isLoading.value = true;
         try {
             const response = await MarvelServices.getCharacterList(characterParams.value);
             characterList.value = response.data;
         } catch (err) {
             console.error('Error fetching character list:', err);
+        } finally {
+            isLoading.value = false;
         }
     };
 
     return {
         characterList,
         characterParams,
-        getCharacterList,
+        getCharacterList
     };
 }
