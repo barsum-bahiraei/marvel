@@ -13,5 +13,9 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(),
         ],
-    }
+    },
+    image: {
+        provider: 'ipx',
+        domains: ['http://i.annihil.us']
+    },
 })
