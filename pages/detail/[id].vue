@@ -43,7 +43,7 @@
               :key="item.id"
               :name="item.title"
               :thumbnail="item.thumbnail.path"
-              :extension="item.extension"
+              :extension="item.thumbnail.extension"
           />
         </div>
         <div class="text-[24px] font-medium text-white mb-4 mt-12 ">
@@ -55,7 +55,7 @@
               :key="item.id"
               :name="item.title"
               :thumbnail="item.thumbnail.path"
-              :extension="item.extension"
+              :extension="item.thumbnail.extension"
           />
         </div>
       </div>

@@ -25,7 +25,7 @@
             :id="item.id"
             :key="item.id"
             :name="item.name"
-            :extension="item.extension"
+            :extension="item.thumbnail.extension"
             :thumbnail="item.thumbnail.path"
         />
       </div>
