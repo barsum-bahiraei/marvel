@@ -9,9 +9,10 @@ import {computed} from "vue";
 
 const props = defineProps<{
   name: string;
+  extension: string;
   thumbnail: string;
   id?: number;
 }>();
 
-const thumbnailUrl = computed<string>(() => `${props.thumbnail}/portrait_xlarge.jpg`.replace('http://i.annihil.us', '/'))
+const thumbnailUrl = computed<string>(() => `${props.thumbnail}/portrait_xlarge.${props.extension}`)
 </script>

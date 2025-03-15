@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
     image: {
         cloudinary: {
-            baseURL: 'http://i.annihil.us'
+            baseURL: ''
         }
     }
 })
