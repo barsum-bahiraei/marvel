@@ -7,11 +7,17 @@
 }
 
 @theme {
-    --font-display: IRANSans;
+    /*--font-display: IRANSans;*/
     --color-primary: oklch(0.971 0.013 17.38);
     --color-secondary: #2C2E30;
     --color-secondary-1: #3B3D3F;
     --color-secondary-2: #404244;
     --color-secondary-3: #989A9C;
     --color-danger: #DC2626;
+    --text-base: 0.875rem;
+}
+
+body {
+    @apply text-white;
+    @apply text-base;
 }

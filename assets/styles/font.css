@@ -9,6 +9,6 @@
         /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("../fonts/iran-sans/ttf/IRANSansWebFaNum.ttf") format('truetype');
 }
 
-body {
-    font-family: IRANSans, serif;
-}
+/*body {*/
+/*    font-family: IRANSans, serif;*/
+/*}*/
