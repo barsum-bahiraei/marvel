@@ -3,7 +3,7 @@
     <template #header>
       <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12">
         <div class="">
-          <NuxtImg
+          <img
               :src="`${characterDetail?.data?.results[0].thumbnail.path}/portrait_xlarge.jpg`"
               alt="this is picture"
               class="w-full md:w-[240px] md:h-[240px] rounded-lg md:object-cover"

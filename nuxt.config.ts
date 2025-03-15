@@ -13,9 +13,5 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(),
         ],
-    },
-    image: {
-        // Remove 'provider: static' or use 'provider: default' for external URLs
-        provider: 'default',  // 'default' allows external URLs to work
     }
 })
