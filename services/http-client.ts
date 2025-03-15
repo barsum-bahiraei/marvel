@@ -1,5 +1,5 @@
 import axios from 'axios';
-import md5 from 'js-md5';
+import {md5} from 'js-md5';
 
 // Your Marvel API keys
 const publicKey = 'c3ac34542679cab826549b77e23984bb';
