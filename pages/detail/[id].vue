@@ -1,31 +1,32 @@
 <template>
   <NuxtLayout>
     <template #header>
-      <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12">
         <div class="">
           <NuxtImg
               :src="`${characterDetail?.data?.results[0].thumbnail.path}/portrait_xlarge.jpg`"
               alt="this is picture"
-              class="w-full"
+              class="w-full md:w-[240px] md:h-[240px] rounded-lg md:object-cover"
               loading="lazy"
           />
         </div>
         <div class="text-white">
-          <div>
+          <div class="text-[32px] font-medium">
             {{ characterDetail?.data?.results[0].name }}
           </div>
-          <div class="mt-4">
+          <div class="mt-8 text-secondary-4">
             {{ characterDetail?.data?.results[0].description }}
           </div>
-          <div class="mt-4">
+          <div class="mt-5 text-secondary-4">
             <a
                 v-for="url in characterDetail?.data?.results[0].urls"
                 :key="url.type"
                 :href="url.url"
                 target="_blank"
-                class="border rounded px-3 py-2"
+                class="border border-secondary-5 rounded px-3 py-2 mr-3 inline-flex items-center justify-center font-medium capitalize"
             >
-              Details
+              <NuxtImg src="/images/export.svg" with="24" height="24" class="mr-2"/>
+              {{ url.type }}
             </a>
           </div>
         </div>
@@ -33,7 +34,7 @@
     </template>
     <div class="bg-secondary py-8 min-h-[89vh]">
       <div class="container px-3 mx-auto">
-        <div class="text-[24px] text-white mb-4">
+        <div class="text-[24px] font-medium text-white mb-4">
           Comics
         </div>
         <div class="grid md:grid-cols-4 gap-6">
@@ -44,7 +45,7 @@
               :thumbnail="item.thumbnail.path"
           />
         </div>
-        <div class="text-[24px] text-white mb-4 mt-12">
+        <div class="text-[24px] font-medium text-white mb-4 mt-12 ">
           Series
         </div>
         <div class="grid md:grid-cols-4 gap-6">
